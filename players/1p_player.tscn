@@ -41,7 +41,7 @@ mesh = SubResource("CapsuleMesh_gj4pm")
 skeleton = NodePath("../..")
 
 [node name="Camera3D" type="Camera3D" parent="Rig/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.137555, -0.414131)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.425116)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

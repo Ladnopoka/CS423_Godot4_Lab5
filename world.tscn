@@ -1,14 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt0uxi3smgs0c"]
+[gd_scene load_steps=3 format=3 uid="uid://bt0uxi3smgs0c"]
 
 [ext_resource type="PackedScene" uid="uid://dur07wx5ljo" path="res://scenes/BlockWorld.tscn" id="1_xlih3"]
-[ext_resource type="PackedScene" uid="uid://cqspix8qgnnst" path="res://players/1p_player.tscn" id="2_vjcav"]
-[ext_resource type="PackedScene" uid="uid://b1161412pkxqe" path="res://vr/XRPlayer.tscn" id="3_btg1f"]
+[ext_resource type="PackedScene" uid="uid://b56sgpkan533n" path="res://players/1p_player_keyboard.tscn" id="2_61jpm"]
 
 [node name="World" type="Node3D"]
 
 [node name="Blockworld" parent="." instance=ExtResource("1_xlih3")]
 
-[node name="FPPlayer" parent="." instance=ExtResource("2_vjcav")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14628, 0)
-
-[node name="XRPlayer" parent="." instance=ExtResource("3_btg1f")]
+[node name="FPPlayer" parent="." instance=ExtResource("2_61jpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12232, 0)

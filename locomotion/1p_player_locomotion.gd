@@ -12,11 +12,13 @@ const SPRINT_SPEED = 11.0
 @onready var body = $Rig
 @onready var head = $Rig/Head
 @onready var camera_3d = $Rig/Head/Camera3D
-#@onready var camera_3d = $Rig/Head/XROrigin3D
+#@onready var camera_3d = $Rig/Head/XRPlayer
 
 var angleX = 0 	# current vertical angle of players head
 @export var maxAngle = 90 # maximum degree for looking down/up (positive is down, negative is up)
 @export var headAngleLocomotionTrigger = 20 # degrees when player start moving (positive is forward, negative is backward) 
+@export var headAngleStopTrigger = 10  # Degrees to stop moving (should be less than locomotion trigger)
+var isMoving = false
 
 var camera_x_rotation = 0 # keeps track of how much we move the camera along the x-axis (so to not overturn)
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") # gravity from project settings
@@ -41,7 +43,7 @@ func apply_gravity(delta):
 
 # Locomotion with keys and mouse (for direction)
 func movement_keyboard(delta):
-	# Handle Sprint
+	# Handle Sprint for extra cool movement
 	if Input.is_key_pressed(KEY_SHIFT):
 		speed = SPRINT_SPEED
 	else:
@@ -63,12 +65,20 @@ func movement_headtilt(delta):
 	var basis = body.get_global_transform().basis
 	var direction = Vector3()
 	print ("Angle:" , angleX )
-	if (angleX > headAngleLocomotionTrigger):
-		direction -= basis.z # move foreward
-		apply_velocity(direction, delta)
-	elif (angleX < headAngleLocomotionTrigger):
-		direction += basis.z # move foreward
-		apply_velocity(direction, delta)
+	if angleX > headAngleLocomotionTrigger and not isMoving:
+		isMoving = true
+	elif angleX < -headAngleLocomotionTrigger and not isMoving:
+		isMoving = true
+	elif abs(angleX) < headAngleStopTrigger:
+		isMoving = false
+
+	if isMoving:
+		if angleX > 0:
+			direction -= basis.z  # Move forward
+			apply_velocity(direction, delta)  # Ensure this is within the if block
+		else:
+			direction += basis.z  # Move backward
+			apply_velocity(direction, delta)
 	else:
 		apply_friction(direction, delta)
 		
