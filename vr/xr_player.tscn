@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://db5f7l4i6aunw"]
+
+[ext_resource type="Script" path="res://vr/xr_player.gd" id="1_eedvb"]
+
+[node name="XROrigin3D" type="XROrigin3D"]
+script = ExtResource("1_eedvb")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]

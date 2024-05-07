@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://baamh1q1rc8su"]
+
+[ext_resource type="Material" uid="uid://p7pjts7i4cp" path="res://scenes/BlockWorldMaterial.tres" id="1_vpono"]
+
+[node name="Tower1Door" type="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00545025, 0.00998163, 0.00412178)
+operation = 2
+
+[node name="Tower" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349783, 4, 0.0379114)
+size = Vector3(4, 8, 4)
+material = ExtResource("1_vpono")
+
+[node name="Inside" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349783, 4, 0.0379114)
+operation = 2
+size = Vector3(1, 8, 1)
+material = ExtResource("1_vpono")
+
+[node name="Door" type="CSGBox3D" parent="."]
+transform = Transform3D(2.34644, 0, 0, 0, 1.00627, 0, 0, 0, 1.00627, 0.334942, 1.5, 0.736736)
+operation = 2
+size = Vector3(1, 3, 4)
+material = ExtResource("1_vpono")
+
+[node name="Lower Window" type="CSGBox3D" parent="."]
+transform = Transform3D(1.00627, 0, 0, 0, 0.222436, 0, 0, 0, 0.477417, 0.419116, 3.91457, 1.14661)
+operation = 2
+size = Vector3(1, 3, 5)
+material = ExtResource("1_vpono")
+
+[node name="Lower Window2" type="CSGBox3D" parent="."]
+transform = Transform3D(1.00627, 0, 0, 0, 0.222436, 0, 0, 0, 0.477417, 0.419116, 5.2382, 1.14661)
+operation = 2
+size = Vector3(1, 3, 5)
+material = ExtResource("1_vpono")
+
+[node name="Lower Window3" type="CSGBox3D" parent="."]
+transform = Transform3D(1.00627, 0, 0, 0, 0.222436, 0, 0, 0, 0.477417, 0.419116, 6.38334, 1.14661)
+operation = 2
+size = Vector3(1, 3, 5)
+material = ExtResource("1_vpono")
+
+[node name="Roof" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.388883, 10.7907, 0.0341914)
+
+[node name="Main Roof" type="CSGBox3D" parent="Roof"]
+size = Vector3(4, 0.25, 4)
+material = ExtResource("1_vpono")
+
+[node name="Post1" type="CSGBox3D" parent="Roof"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61827, -1.3724, -1.63259)
+size = Vector3(0.1, 3, 0.1)
+material = ExtResource("1_vpono")
+
+[node name="Post2" type="CSGBox3D" parent="Roof"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60395, -1.52449, -1.63259)
+size = Vector3(0.1, 3, 0.1)
+material = ExtResource("1_vpono")
+
+[node name="Post3" type="CSGBox3D" parent="Roof"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60395, -1.41875, 1.5037)
+size = Vector3(0.1, 3, 0.1)
+material = ExtResource("1_vpono")
+
+[node name="Post4" type="CSGBox3D" parent="Roof"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66123, -1.49637, 1.5037)
+size = Vector3(0.1, 3, 0.1)
+material = ExtResource("1_vpono")

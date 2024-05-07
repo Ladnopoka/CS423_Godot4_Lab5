@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://8i1oaawte8cv"]
+
+[resource]
+albedo_color = Color(0.815686, 0.65098, 0.203922, 1)
+detail_enabled = true
+detail_blend_mode = 3
+detail_uv_layer = 1
+uv1_triplanar = true
+uv2_scale = Vector3(0.5, 0.5, 0.5)
+uv2_triplanar = true
