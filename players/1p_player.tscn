@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqspix8qgnnst"]
 
-[ext_resource type="Script" path="res://players/custom_player/first_person_player.gd" id="1_pewly"]
+[ext_resource type="Script" path="res://locomotion/1p_player_locomotion.gd" id="1_rjkyy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_taolc"]
 albedo_color = Color(0, 0.619608, 0, 1)
@@ -19,7 +19,7 @@ height = 0.2
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s77xu"]
 
 [node name="FPPlayer" type="CharacterBody3D"]
-script = ExtResource("1_pewly")
+script = ExtResource("1_rjkyy")
 
 [node name="Rig" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -41,7 +41,7 @@ mesh = SubResource("CapsuleMesh_gj4pm")
 skeleton = NodePath("../..")
 
 [node name="Camera3D" type="Camera3D" parent="Rig/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0226963, -0.476397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.137555, -0.414131)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

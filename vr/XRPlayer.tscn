@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1161412pkxqe"]
+
+[ext_resource type="Script" path="res://locomotion/xr_player_locomotion.gd" id="1_5gbh5"]
+
+[node name="XRPlayer" type="XROrigin3D"]
+script = ExtResource("1_5gbh5")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85183, 0)

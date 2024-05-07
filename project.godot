@@ -11,5 +11,14 @@ config_version=5
 [application]
 
 config/name="CS423_Godot4_Lab5"
+run/main_scene="res://worlds/world/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+
+[xr]
+
+shaders/enabled=true
